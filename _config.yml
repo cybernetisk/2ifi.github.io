@@ -1,9 +1,6 @@
 theme: jekyll-theme-cayman
 title: 2i.fi
 description: Din guide til ifi
-links: [
-  {
-    link: http://ap.no/
+links:
+  - link: http://ap.no/
     label: AP
-  }
-]
