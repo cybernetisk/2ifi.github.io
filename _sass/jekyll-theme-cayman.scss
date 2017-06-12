@@ -92,6 +92,18 @@ a {
   margin: auto;
 }
 
+.project-name {
+  float: left;
+}
+
+.project-tagline {
+  float: left;
+}
+
+.top-link {
+  float: right;
+}
+
 .page-header {
   color: $header-heading-color;
   text-align: center;
