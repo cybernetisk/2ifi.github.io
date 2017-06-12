@@ -3,4 +3,6 @@ layout: default
 title: Foreninger
 ---
 ## Foreninger
-Fuck alt annet enn Navet!
+|Navn |Link                                        |
+|-----|--------------------------------------------|
+|Navet|[https://ifinavet.no/](https://ifinavet.no/)|
