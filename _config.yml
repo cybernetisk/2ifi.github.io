@@ -1,12 +1,3 @@
 theme: jekyll-theme-cayman
 title: 2i.fi
 description: Din guide til ifi
-links:
-  - link: /
-    lable: Hjem
-  - link: nye-studenter
-    lable: Nye Studenter
-  - link: foreninger
-    lable: Foreninger
-  - link: noe-annet
-    lable: Noe Annet
