@@ -2,6 +2,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .grid-parent {
@@ -9,15 +15,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  width: 100%;
-  min-height: 100vh;
 }
 
 .box {
   margin: 15px;
   width: 250px;
   height: 250px;
-  background-color: #FF8A80;
+  background-color: #82B1FF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,14 +39,18 @@ body {
   margin: 0;
 }
 
+.footer {
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+
+}
+
 .hidden {
   visibility: hidden;
 }
 
 @media (max-width: 1000px) {
-  .grid-parent {
-  }
-
   .box {
     width: 350px;
     height: 350px;
@@ -54,5 +62,9 @@ body {
 
   .box h2 {
     font-size: 36px;
+  }
+
+  .hidden-footer {
+    display: none;
   }
 }
