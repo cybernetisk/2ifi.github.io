@@ -10,6 +10,8 @@
 
 [Fagsider](https://www.uio.no/studier/emner/matnat/ifi/)
 
+[Navet](https://ifinavet.no/)
+
 [Timeplan](https://minestudier.uio.no/nb/student/index.html)
 
 [TP (rombestilling)](https://tp.uio.no/timeplan/?id=&type=room&area=GA&building=GA06&id=&week=24&ar=2017)
