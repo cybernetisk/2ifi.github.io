@@ -38,9 +38,17 @@ body {
   visibility: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .box {
     width: 350px;
     height: 350px;
+  }
+
+  .box img {
+    width: 155px;
+  }
+
+  .box h2 {
+    font-size: 36px;
   }
 }
