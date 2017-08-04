@@ -56,6 +56,10 @@ body {
     height: 350px;
   }
 
+  .footer {
+    font-size: 30px;
+  }
+
   .box img {
     width: 155px;
   }
