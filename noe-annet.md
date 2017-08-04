@@ -1,2 +1,0 @@
-## Noe annet
-YOLO
