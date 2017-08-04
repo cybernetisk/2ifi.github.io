@@ -37,3 +37,10 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+@media (max-width: 600px) {
+  .box {
+    width: 350px;
+    height: 350px;
+  }
+}
