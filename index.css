@@ -33,6 +33,14 @@ body {
   width: 135px;
 }
 
+.box .align-img {
+  width: 135px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .box h2 {
   color: white;
   font-weight: 400;
@@ -58,6 +66,11 @@ body {
 
   .footer {
     font-size: 30px;
+  }
+
+  .box .align-img {
+    width: 155px;
+    height: 155px;
   }
 
   .box img {
