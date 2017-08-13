@@ -33,6 +33,10 @@ body {
   width: 135px;
 }
 
+.box svg {
+  width: 135px;
+}
+
 .box .align-img {
   width: 135px;
   height: 135px;
@@ -74,6 +78,10 @@ body {
   }
 
   .box img {
+    width: 155px;
+  }
+
+  .box svg {
     width: 155px;
   }
 
