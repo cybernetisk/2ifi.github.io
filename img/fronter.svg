@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1"
+   width="300"
+   height="300"
+   viewBox="0 0 3000 3000"
+   id="svg4"
+   sodipodi:docname="unnamed.svg"
+   inkscape:version="0.92.1 r">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="950"
+     inkscape:window-height="480"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="0.78666667"
+     inkscape:cx="150"
+     inkscape:cy="150"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M803 2929c-74-14-169-67-227-125-159-158-178-403-46-586 34-48 234-221 441-383l38-30 1-227c0-126-3-228-7-228s-19 12-35 27c-15 14-30 24-33 21s-39-72-80-153c-87-172-93-144 56-261l99-79V673c0-248 7-308 47-387 33-66 118-147 190-182 54-27 66-29 178-29 117 0 121 1 182 33 230 125 298 408 147 613-19 26-117 113-219 195l-185 149v457l24-19c13-10 46-36 72-58 27-22 150-123 274-224s240-197 258-213c48-41 137-83 220-103 118-29 290-11 349 37 8 7-10 51-68 166l-80 157-56-3c-65-5-118 16-148 56-19 25-20 47-25 307-4 235-8 285-21 310-50 91-171 124-254 69-76-49-79-59-85-242l-5-163-227 183-227 183-1 295c0 223-4 306-14 341-72 237-297 375-533 328zm144-346c52-24 63-60 63-208 0-69-2-125-5-125s-34 24-69 53c-34 30-77 64-94 77-67 50-78 132-24 182 45 42 75 47 129 21zm467-2005c85-68 99-103 58-150-18-22-71-23-98-4-16 12-20 29-22 105-2 50-1 91 3 91 3 0 30-19 59-42z"
+     fill="#999"
+     id="path2"
+     style="fill:#ffffff" />
+</svg>
