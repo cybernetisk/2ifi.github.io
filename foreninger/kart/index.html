@@ -18,15 +18,24 @@
       background-color: #222222;
     }
 
+    img {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      height: 50px;
+      z-index: 100;
+    }
+
   </style>
 </head>
 <body>
+<a href="http://ifiavis.no/"><img src="https://i.imgur.com/qOMtwYz.png" /></a>
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
   // create an array with nodes
-  var size = 15*1.5;
-  var fontSize = 13*1.5;
+  var size = 15*1.75;
+  var fontSize = 13*1.50;
 
   var nodesArray = [
     {id: 'p1', label: 'Henrik Lilleengen', group: 0},
@@ -96,23 +105,57 @@
     {id: 'p56', label: 'Bendik Hess-Bolstad', group: 0},
     {id: 'p57', label: 'Fredrik H. Lauritsen', group: 0},
 
-    {id: 'f1', label: 'Navet', group: 1, size: size*2, font: {size: fontSize*2}},
-    {id: 'f2', label: 'Dagen', group: 2, size: size*2, font: {size: fontSize*2}},
-    {id: 'f3', label: 'Output', group: 3, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f4', label: 'Homebrew', group: 4, size: size, font: {size: fontSize}},
-    {id: 'f5', label: 'CYB', group: 5, size: size*2, font: {size: fontSize*2}},
-    {id: 'f6', label: 'Fadderstyret', group: 6, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f7', label: 'FU', group: 7, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f8', label: 'FUI', group: 8, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f9', label: 'Prognett', group: 9, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f10', label: 'Digitus', group: 10, size: size*1.5, font: {size: fontSize*1.5}},
-    {id: 'f11', label: 'DUKK', group: 11, size: size, font: {size: fontSize}},
+    {id: 'p58', label: 'Kristoffer Solheim', group: 0},
+    {id: 'p59', label: 'Tonje Røyeng', group: 0},
+    {id: 'p60', label: 'Kari Eldfrid Stamnes', group: 0},
+    {id: 'p61', label: 'Jonas Roppestad Olsen', group: 0},
+    {id: 'p62', label: 'Bjørn Henrik Harr', group: 0},
+    {id: 'p63', label: 'Rune Hovde', group: 0},
+
+    {id: 'p64', label: 'Preben Ødegård Aas', group: 0},
+    {id: 'p65', label: 'Martine Hillevi Solberg', group: 0},
+    {id: 'p66', label: 'Peter Norstein', group: 0},
+    {id: 'p67', label: 'Marta Valentinsen', group: 0},
+    {id: 'p68', label: 'Anna Maria Bukalska', group: 0},
+    {id: 'p69', label: 'Dawood Ahmad', group: 0},
+    {id: 'p70', label: 'Kristine Baluka Hein', group: 0},
+    {id: 'p71', label: 'Jarl Erik Cedergren', group: 0},
+    {id: 'p72', label: 'Anja Gjerpe', group: 0},
+    {id: 'p73', label: 'Tor Jan Derek Berstad', group: 0},
+    {id: 'p74', label: 'Ole Petter Orhagen', group: 0},
+    {id: 'p75', label: 'Dennis Norheim', group: 0},
+    {id: 'p76', label: 'Sivert Frang Lunsæter', group: 0},
+    {id: 'p77', label: 'Emir Zamwa', group: 0},
+    {id: 'p78', label: 'Sivert Frang Lunsæter', group: 0},
+
+    {id: 'p79', label: 'Isak Eriksen Bjørn', group: 0},
+    {id: 'p80', label: 'Jesper Johan Vilhelm Andersson', group: 0},
+    {id: 'p81', label: 'Peter Nordstein', group: 0},
+    {id: 'p82', label: 'Jeanette Kirkerud', group: 0},
+    {id: 'p83', label: 'Nikolai René Berg', group: 0},
+    {id: 'p84', label: 'Mari Galta', group: 0},
+    {id: 'p85', label: 'Pål Primstad', group: 0},
+    {id: 'p86', label: 'Tor Jan Derek Berstad', group: 0},
+
+    {id: 'f1', label: 'Navet', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/A0kqewI.jpg", font: {size: fontSize*2}},
+    {id: 'f2', label: 'Dagen', group: 2, size: size*2.5, shape: 'dot',font: {size: fontSize*2}},
+    {id: 'f3', label: 'Output', group: 3, size: size*2, shape: 'circularImage', image: "https://i.imgur.com/bEKEz4w.png", font: {size: fontSize*1.5}},
+    {id: 'f4', label: 'Homebrew', group: 4, size: size*1.5, shape: 'circularImage', image: "https://i.imgur.com/06wiO6s.png", font: {size: fontSize}},
+    {id: 'f5', label: 'CYB', group: 5, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/lz6du9r.jpg", font: {size: fontSize*2}},
+    {id: 'f6', label: 'Fadderstyret', group: 6, size: size*2, shape: 'dot' ,font: {size: fontSize*1.5}},
+    {id: 'f7', label: 'FU', group: 7, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f8', label: 'FUI', group: 8, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f9', label: 'Prognett', group: 9, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f10', label: 'Digitus', group: 10, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f11', label: 'DUKK', group: 11, size: size*1.5, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f12', label: 'Defi', group: 12, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
+    {id: 'f13', label: 'Mikro', group: 13, size: size*2, shape: 'dot', font: {size: fontSize*1.5}},
   ];
 
   var edgesArray = [
     {from: 'p1', to: 'f1', color: {color: "red"}},
     {from: 'p2', to: 'f1', color: {color: "red"}},
-    {from: 'p3', to: 'f1', color: {color: "red"}},
+    {from: 'p3', to: 'f1', color: {color: "yellow"}},
     {from: 'p4', to: 'f1', color: {color: "red"}},
     {from: 'p5', to: 'f1', color: {color: "red"}},
     {from: 'p6', to: 'f1', color: {color: "red"}},
@@ -121,7 +164,7 @@
     {from: 'p9', to: 'f1', color: {color: "red"}},
     {from: 'p10', to: 'f1', color: {color: "red"}},
     {from: 'p1', to: 'f2', color: {color: "red"}},
-    {from: 'p11', to: 'f2', color: {color: "red"}},
+    {from: 'p11', to: 'f2', color: {color: "yellow"}},
     {from: 'p12', to: 'f2', color: {color: "red"}},
     {from: 'p13', to: 'f2', color: {color: "red"}},
     {from: 'p14', to: 'f2', color: {color: "red"}},
@@ -130,7 +173,7 @@
     {from: 'p17', to: 'f2', color: {color: "red"}},
     {from: 'p18', to: 'f2', color: {color: "red"}},
     {from: 'p3', to: 'f3', color: {color: "red"}},
-    {from: 'p19', to: 'f3', color: {color: "red"}},
+    {from: 'p19', to: 'f3', color: {color: "yellow"}},
     {from: 'p20', to: 'f3', color: {color: "red"}},
     {from: 'p21', to: 'f3', color: {color: "red"}},
     {from: 'p22', to: 'f3', color: {color: "red"}},
@@ -138,12 +181,12 @@
     {from: 'p3', to: 'f4', color: {color: "red"}},
     {from: 'p23', to: 'f3', color: {color: "red"}},
     {from: 'p24', to: 'f4', color: {color: "red"}},
-    {from: 'p25', to: 'f4', color: {color: "red"}},
+    {from: 'p25', to: 'f4', color: {color: "yellow"}},
     {from: 'p26', to: 'f4', color: {color: "red"}},
     {from: 'p12', to: 'f5', color: {color: "red"}},
     {from: 'p17', to: 'f5', color: {color: "red"}},
     {from: 'p18', to: 'f5', color: {color: "red"}},
-    {from: 'p27', to: 'f5', color: {color: "red"}},
+    {from: 'p27', to: 'f5', color: {color: "yellow"}},
     {from: 'p28', to: 'f5', color: {color: "red"}},
     {from: 'p29', to: 'f5', color: {color: "red"}},
     {from: 'p30', to: 'f5', color: {color: "red"}},
@@ -180,7 +223,42 @@
     {from: 'p55', to: 'f11', color: {color: "red"}},
     {from: 'p56', to: 'f11', color: {color: "red"}},
     {from: 'p57', to: 'f11', color: {color: "red"}},
+    {from: 'p58', to: 'f12', color: {color: "red"}},
+    {from: 'p59', to: 'f12', color: {color: "red"}},
+    {from: 'p60', to: 'f12', color: {color: "red"}},
+    {from: 'p61', to: 'f12', color: {color: "red"}},
+    {from: 'p62', to: 'f12', color: {color: "red"}},
+    {from: 'p63', to: 'f12', color: {color: "red"}},
 
+    {from: 'p64', to: 'f8', color: {color: "red"}},
+    {from: 'p65', to: 'f8', color: {color: "red"}},
+    {from: 'p66', to: 'f8', color: {color: "red"}},
+    {from: 'p67', to: 'f8', color: {color: "red"}},
+    {from: 'p68', to: 'f8', color: {color: "red"}},
+    {from: 'p69', to: 'f8', color: {color: "red"}},
+    {from: 'p70', to: 'f8', color: {color: "red"}},
+    {from: 'p71', to: 'f8', color: {color: "red"}},
+    {from: 'p72', to: 'f8', color: {color: "red"}},
+    {from: 'p73', to: 'f8', color: {color: "red"}},
+    {from: 'p74', to: 'f8', color: {color: "red"}},
+    {from: 'p75', to: 'f8', color: {color: "red"}},
+    {from: 'p76', to: 'f8', color: {color: "red"}},
+    {from: 'p77', to: 'f8', color: {color: "red"}},
+    {from: 'p78', to: 'f8', color: {color: "red"}},
+    {from: 'p42', to: 'f8', color: {color: "red"}},
+    {from: 'p14', to: 'f8', color: {color: "red"}},
+    {from: 'p6', to: 'f8', color: {color: "red"}},
+    {from: 'p27', to: 'f8', color: {color: "red"}},
+
+    {from: 'p14', to: 'f13', color: {color: "red"}},
+    {from: 'p79', to: 'f13', color: {color: "yellow"}},
+    {from: 'p80', to: 'f13', color: {color: "red"}},
+    {from: 'p81', to: 'f13', color: {color: "red"}},
+    {from: 'p82', to: 'f13', color: {color: "red"}},
+    {from: 'p83', to: 'f13', color: {color: "red"}},
+    {from: 'p84', to: 'f13', color: {color: "red"}},
+    {from: 'p85', to: 'f13', color: {color: "red"}},
+    {from: 'p86', to: 'f13', color: {color: "red"}},
   ];
 
 
