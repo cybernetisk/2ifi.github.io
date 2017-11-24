@@ -25,11 +25,10 @@
 
 <script type="text/javascript">
   // create an array with nodes
-  var size = 15*1.25;
-  var fontSize = 13*1.25;
+  var size = 15*1.5;
+  var fontSize = 13*1.5;
 
-
-  var nodes = new vis.DataSet([
+  var nodesArray = [
     {id: 'p1', label: 'Henrik Lilleengen', group: 0},
     {id: 'p2', label: 'Andreas Thompson', group: 0},
     {id: 'p3', label: 'Sigurd Rognhaugen', group: 0},
@@ -108,10 +107,9 @@
     {id: 'f9', label: 'Prognett', group: 9, size: size*1.5, font: {size: fontSize*1.5}},
     {id: 'f10', label: 'Digitus', group: 10, size: size*1.5, font: {size: fontSize*1.5}},
     {id: 'f11', label: 'DUKK', group: 11, size: size, font: {size: fontSize}},
-  ]);
+  ];
 
-  // create an array with edges
-  var edges = new vis.DataSet([
+  var edgesArray = [
     {from: 'p1', to: 'f1', color: {color: "red"}},
     {from: 'p2', to: 'f1', color: {color: "red"}},
     {from: 'p3', to: 'f1', color: {color: "red"}},
@@ -183,10 +181,31 @@
     {from: 'p56', to: 'f11', color: {color: "red"}},
     {from: 'p57', to: 'f11', color: {color: "red"}},
 
+  ];
 
 
 
-  ]);
+  count = [];
+  for(var i = 0; i < edgesArray.length; i++) {
+    if(!count[edgesArray[i].from]) {
+      count[edgesArray[i].from] = 0;
+    }
+    count[edgesArray[i].from]++;
+  }
+
+  for(i = 0; i < nodesArray.length; i++) {
+    if(nodesArray[i].id.indexOf('p') > -1 && count[nodesArray[i].id] !== 0) {
+      nodesArray[i].size = 15*(((count[nodesArray[i].id]-1) * 0.5) + 1);
+      nodesArray[i].font = {
+        size: 13*(((count[nodesArray[i].id]-1) * 0.25) + 1)
+      }
+    }
+  }
+
+  var nodes = new vis.DataSet(nodesArray);
+
+  // create an array with edges
+  var edges = new vis.DataSet(edgesArray);
 
   // create a network
   var container = document.getElementById('mynetwork');
