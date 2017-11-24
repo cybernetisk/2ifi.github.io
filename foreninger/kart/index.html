@@ -1,0 +1,218 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    body {
+      color: #d3d3d3;
+      font: 12pt arial;
+      background-color: #222222;
+      margin: 0;
+      padding: 0;
+    }
+
+    #mynetwork {
+      width: 100vw;
+      height: 100vh;
+      background-color: #222222;
+    }
+
+  </style>
+</head>
+<body>
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  var size = 15*1.25;
+  var fontSize = 13*1.25;
+
+
+  var nodes = new vis.DataSet([
+    {id: 'p1', label: 'Henrik Lilleengen', group: 0},
+    {id: 'p2', label: 'Andreas Thompson', group: 0},
+    {id: 'p3', label: 'Sigurd Rognhaugen', group: 0},
+    {id: 'p4', label: 'Henrik Johan Wistner', group: 0},
+    {id: 'p5', label: 'Anna Finstad', group: 0},
+    {id: 'p6', label: 'Carl-Magnus Lein', group: 0},
+    {id: 'p7', label: 'Simon Pettersen', group: 0},
+    {id: 'p8', label: 'Mayo Vam', group: 0},
+    {id: 'p9', label: 'Celina Moldestad', group: 0},
+    {id: 'p10', label: 'Pernille Kloster', group: 0},
+
+    {id: 'p11', label: 'Karl H. Totland', group: 0},
+    {id: 'p12', label: 'Benjamin Breiby', group: 0},
+    {id: 'p13', label: 'Egwene Tegelaár', group: 0},
+    {id: 'p14', label: 'Jeanette Kirkerud', group: 0},
+    {id: 'p15', label: 'Vincent Olsen', group: 0},
+    {id: 'p16', label: 'Elise Lystad', group: 0},
+    {id: 'p17', label: 'Thor Høgås', group: 0},
+    {id: 'p18', label: 'Nicolas Harlem Eide', group: 0},
+
+    {id: 'p19', label: 'Jacob Køhn', group: 0},
+    {id: 'p20', label: 'Henrik Vedal', group: 0},
+    {id: 'p21', label: 'Bernt Roalkvam', group: 0},
+    {id: 'p22', label: 'Nils Hiorth', group: 0},
+    {id: 'p23', label: 'Irene Solberg', group: 0},
+
+    {id: 'p24', label: 'Svein Manum', group: 0},
+    {id: 'p25', label: 'Nanette Lindrupsen', group: 0},
+    {id: 'p26', label: 'Walid Haidari', group: 0},
+
+    {id: 'p27', label: 'Andreas Nyborg Hansen', group: 0},
+    {id: 'p28', label: 'Stian Rustad', group: 0},
+    {id: 'p29', label: 'Adrian Helle', group: 0},
+    {id: 'p30', label: 'Elise Lystad', group: 0},
+    {id: 'p31', label: 'Synne Baumann', group: 0},
+    {id: 'p32', label: 'Lee Kvåle', group: 0},
+    {id: 'p33', label: 'Kathrine Hoel', group: 0},
+    {id: 'p34', label: 'Marie Reichelt', group: 0},
+    {id: 'p35', label: 'Håkon Carlsen', group: 0},
+    {id: 'p36', label: 'Maela Le Borgne', group: 0},
+    {id: 'p37', label: 'Tor-Aksel Solberg', group: 0},
+    {id: 'p38', label: 'Sindre Brurberg', group: 0},
+
+    {id: 'p39', label: 'Lilly Arstad Helmersen', group: 0},
+    {id: 'p40', label: 'Kari Eldfrid Stamnes', group: 0},
+    {id: 'p41', label: 'Trine Høyås', group: 0},
+
+    {id: 'p42', label: 'Nikolas Papaioannou', group: 0},
+
+    {id: 'p43', label: 'Mattis Bratland', group: 0},
+    {id: 'p44', label: 'Hans Christian Tranøy Jenvild', group: 0},
+    {id: 'p45', label: 'Arild Lillegård', group: 0},
+    {id: 'p46', label: 'Salman Ahmed', group: 0},
+    {id: 'p47', label: 'Deep Singh', group: 0},
+
+    {id: 'p48', label: 'Julie Eldøy', group: 0},
+    {id: 'p49', label: 'Elena Adele Sjøholt Snellingen', group: 0},
+    {id: 'p50', label: 'Morten Østigård', group: 0},
+    {id: 'p51', label: 'Cecilie Isdahl', group: 0},
+    {id: 'p52', label: 'Jonas Arnesen Baer', group: 0},
+
+    {id: 'p53', label: 'Fredrik Glendrange', group: 0},
+    {id: 'p54', label: 'Sondre Hamnvik', group: 0},
+    {id: 'p55', label: 'Brage W. Bråten', group: 0},
+    {id: 'p56', label: 'Bendik Hess-Bolstad', group: 0},
+    {id: 'p57', label: 'Fredrik H. Lauritsen', group: 0},
+
+    {id: 'f1', label: 'Navet', group: 1, size: size*2, font: {size: fontSize*2}},
+    {id: 'f2', label: 'Dagen', group: 2, size: size*2, font: {size: fontSize*2}},
+    {id: 'f3', label: 'Output', group: 3, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f4', label: 'Homebrew', group: 4, size: size, font: {size: fontSize}},
+    {id: 'f5', label: 'CYB', group: 5, size: size*2, font: {size: fontSize*2}},
+    {id: 'f6', label: 'Fadderstyret', group: 6, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f7', label: 'FU', group: 7, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f8', label: 'FUI', group: 8, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f9', label: 'Prognett', group: 9, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f10', label: 'Digitus', group: 10, size: size*1.5, font: {size: fontSize*1.5}},
+    {id: 'f11', label: 'DUKK', group: 11, size: size, font: {size: fontSize}},
+  ]);
+
+  // create an array with edges
+  var edges = new vis.DataSet([
+    {from: 'p1', to: 'f1', color: {color: "red"}},
+    {from: 'p2', to: 'f1', color: {color: "red"}},
+    {from: 'p3', to: 'f1', color: {color: "red"}},
+    {from: 'p4', to: 'f1', color: {color: "red"}},
+    {from: 'p5', to: 'f1', color: {color: "red"}},
+    {from: 'p6', to: 'f1', color: {color: "red"}},
+    {from: 'p7', to: 'f1', color: {color: "red"}},
+    {from: 'p8', to: 'f1', color: {color: "red"}},
+    {from: 'p9', to: 'f1', color: {color: "red"}},
+    {from: 'p10', to: 'f1', color: {color: "red"}},
+    {from: 'p1', to: 'f2', color: {color: "red"}},
+    {from: 'p11', to: 'f2', color: {color: "red"}},
+    {from: 'p12', to: 'f2', color: {color: "red"}},
+    {from: 'p13', to: 'f2', color: {color: "red"}},
+    {from: 'p14', to: 'f2', color: {color: "red"}},
+    {from: 'p15', to: 'f2', color: {color: "red"}},
+    {from: 'p16', to: 'f2', color: {color: "red"}},
+    {from: 'p17', to: 'f2', color: {color: "red"}},
+    {from: 'p18', to: 'f2', color: {color: "red"}},
+    {from: 'p3', to: 'f3', color: {color: "red"}},
+    {from: 'p19', to: 'f3', color: {color: "red"}},
+    {from: 'p20', to: 'f3', color: {color: "red"}},
+    {from: 'p21', to: 'f3', color: {color: "red"}},
+    {from: 'p22', to: 'f3', color: {color: "red"}},
+    {from: 'p1', to: 'f4', color: {color: "red"}},
+    {from: 'p3', to: 'f4', color: {color: "red"}},
+    {from: 'p23', to: 'f3', color: {color: "red"}},
+    {from: 'p24', to: 'f4', color: {color: "red"}},
+    {from: 'p25', to: 'f4', color: {color: "red"}},
+    {from: 'p26', to: 'f4', color: {color: "red"}},
+    {from: 'p12', to: 'f5', color: {color: "red"}},
+    {from: 'p17', to: 'f5', color: {color: "red"}},
+    {from: 'p18', to: 'f5', color: {color: "red"}},
+    {from: 'p27', to: 'f5', color: {color: "red"}},
+    {from: 'p28', to: 'f5', color: {color: "red"}},
+    {from: 'p29', to: 'f5', color: {color: "red"}},
+    {from: 'p30', to: 'f5', color: {color: "red"}},
+    {from: 'p31', to: 'f5', color: {color: "red"}},
+    {from: 'p32', to: 'f5', color: {color: "red"}},
+    {from: 'p33', to: 'f5', color: {color: "red"}},
+    {from: 'p34', to: 'f5', color: {color: "red"}},
+    {from: 'p35', to: 'f5', color: {color: "red"}},
+    {from: 'p36', to: 'f5', color: {color: "red"}},
+    {from: 'p37', to: 'f5', color: {color: "red"}},
+    {from: 'p38', to: 'f5', color: {color: "red"}},
+    {from: 'p39', to: 'f6', color: {color: "red"}},
+    {from: 'p40', to: 'f6', color: {color: "red"}},
+    {from: 'p41', to: 'f6', color: {color: "red"}},
+    {from: 'p18', to: 'f6', color: {color: "red"}},
+    {from: 'p28', to: 'f6', color: {color: "red"}},
+    {from: 'p38', to: 'f6', color: {color: "red"}},
+    {from: 'p36', to: 'f6', color: {color: "red"}},
+    {from: 'p42', to: 'f7', color: {color: "red"}},
+    {from: 'p27', to: 'f7', color: {color: "red"}},
+    {from: 'p43', to: 'f9', color: {color: "red"}},
+    {from: 'p44', to: 'f9', color: {color: "red"}},
+    {from: 'p45', to: 'f9', color: {color: "red"}},
+    {from: 'p46', to: 'f9', color: {color: "red"}},
+    {from: 'p47', to: 'f9', color: {color: "red"}},
+    {from: 'p12', to: 'f9', color: {color: "red"}},
+    {from: 'p48', to: 'f10', color: {color: "red"}},
+    {from: 'p49', to: 'f10', color: {color: "red"}},
+    {from: 'p50', to: 'f10', color: {color: "red"}},
+    {from: 'p51', to: 'f10', color: {color: "red"}},
+    {from: 'p52', to: 'f10', color: {color: "red"}},
+    {from: 'p53', to: 'f11', color: {color: "red"}},
+    {from: 'p54', to: 'f11', color: {color: "red"}},
+    {from: 'p55', to: 'f11', color: {color: "red"}},
+    {from: 'p56', to: 'f11', color: {color: "red"}},
+    {from: 'p57', to: 'f11', color: {color: "red"}},
+
+
+
+
+  ]);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+
+  // provide the data in the vis format
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    nodes: {
+      shape: 'dot',
+      size: 15,
+      font: {
+        size: 13,
+        color: '#ffffff'
+      },
+      borderWidth: 2
+    },
+    edges: {
+      width: 2
+    }
+  };
+
+  // initialize your network!
+  var network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>
