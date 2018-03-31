@@ -56,15 +56,18 @@
     </ul>
 </div>
 <form class="form-group" action="https://stemmeseddel-196621.appspot.com/">
-    Antall stemmeberettigede:<br>
-    <input class="form-control" type="number" name="votes" value="30">
-    <br>
-    Antall stemmeseddeler:<br>
-    <input class="form-control" type="number" name="ballots" value="8">
-    <br>
-    År:<br>
-    <input class="form-control" type="text" name="year" value="V2018">
-    <br><br>
+    <div class="form-group">
+    <label for="votes" class="bmd-label-floating">Antall stemmeberettigede</label>
+    <input class="form-control" id="votes" type="number" name="votes" value="30">
+    </div>
+    <div class="form-group">
+    <label for="ballots" class="bmd-label-floating">Antall stemmeseddeler</label>
+    <input class="form-control" id="ballots" type="number" name="ballots" value="8">
+    </div>
+    <div class="form-group">
+    <label for="year" class="bmd-label-floating">År</label>
+    <input class="form-control" id="year" type="text" name="year" value="V2018">
+    </div>
     <input class="btn btn-primary btn-raised color-fix" type="submit" value="Submit">
 </form>
 </body>
