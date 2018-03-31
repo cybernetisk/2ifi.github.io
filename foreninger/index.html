@@ -1,131 +1,199 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>IFI Foreninger</title>
-  </head>
-  <body>
-  <table style="margin: 0 auto;">
-  <tr>
-    <th>Forening</th>
-    <th>Vedtekter</th> 
-    <th>GF H17</th>
-    <th>GF V18</th>
-  </tr>
-  <tr>
-    <td>Navet</td>
-    <td><a href="Vedtekter%20Navet%20V2018.pdf">Vedtekter</a></td> 
-    <td><a href="Referat%20%2B%20signaturer.pdf">ord</a></td>
-  </tr>
-  <tr>
-    <td>CYB</td>
-    <td><a href="cyb_vedtekter.pdf">Vedtekter</a></td> 
-    <td><a href="protokoll_H17.pdf">ord</a></td>
-  </tr>
-  <tr>
-    <td>Dagen</td>
-    <td><a href="vedtektsforslag.pdf">Vedtekter</a></td> 
-    <td><a href="Referat%20Genfors%202017.pdf">ord</a></td>
-    <td><a href="protokoll-v18.pdf">eks</a></td>
-  </tr>
-  <tr>
-    <td>Fadderstyret</td>
-    <td><a href="Vedtekterfadderstyret.pdf">Vedtekter</a></td> 
-    <td><a href="Referat-Generalforsamling-26.10.pdf">ord</a></td>
-  </tr>
-  <tr>
-    <td>Homebrew</td>
-    <td><a href="Vedtekter%20-%20Homebrew_med%20endringer.pdf">Vedtekter</a></td> 
-    <td><a href="20170913162913%20(1).pdf">eks</a></td>
-  </tr>
-  <tr>
-    <td>ProgSys</td>
-    <td><a href="ProgSys_Vedteker%202018.pdf">Vedtekter</a></td> 
-    <td></td>
-    <td><a href="ProgSys_GenforsUsignert.pdf">ord</a></td>
-  </tr>
-  <tr>
-    <td>Mikro</td>
-    <td><a href="gjeldende_vedtekter.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>FUI</td>
-    <td><a href="Statutter _ Fagutvalget ved Institutt for informatikk.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>FU</td>
-    <td><a href="2016-09-02_Fordelingsutvalgets_vedtekter.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>List</td>
-    <td><a href="Vedtekter%20-%20PI_SK.pdf">Vedtekter [uten navnebytte]</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>Digitus</td>
-    <td><a href="Vedtekter-for-Digitus.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-  <td>IFI-Spillutvikling</td>
-    <td><a href="IFISpillutvikling_Vedtekter2018.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>DEFI</td>
-    <td><a href="Vedtekter%20•%20Defi.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>IFI sjakk</td>
-    <td><a href="Søknad_8_IfiSjakk_vedtekter.pdf">Vedtekter [2015]</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>DUKK</td>
-    <td><a href="vedtekter-uio-kasteklubb.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>Applitude</td>
-    <td><a href="Vedtekter.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>IFI-avis</td>
-    <td><a href="Vedtekter%20for%20IFI-avis.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>IFI makers</td>
-    <td>Lagt ned?</td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>MAPS</td>
-    <td><a href="vedtekter.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>Svett</td>
-    <td>Lagt ned?</td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>Verdande</td>
-    <td><a href="Vedtekter%20–%20Verdande.pdf">Vedtekter</a></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td>FIFI</td>
-    <td></td> 
-    <td></td>
-  </tr>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <style>
+        .text-primary, td > a {
+            color: #3f51b5 !important;
+        }
+
+        .nav-link {
+            color: #cdbfe3 !important;
+            font-weight: 400 !important;
+        }
+
+        .active, .nav-link:hover {
+            color: #fff !important;
+        }
+
+        .active {
+            font-weight: 500 !important;
+        }
+
+        .table {
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .color-fix {
+            background-color: #3f51b5;
+        }
+
+        .nav {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="color-fix">
+    <ul class="nav nav-tabs color-fix">
+        <li class="nav-item">
+            <a class="nav-link active" href="kart">Liste</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="kart">Kart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="seddel">Generere stemmeseddeler</a>
+        </li>
+    </ul>
+</div>
+<table class="table">
+    <tr>
+        <th scope="col">Forening</th>
+        <th scope="col">Vedtekter</th>
+        <th scope="col">GF H17</th>
+        <th scope="col">GF V18</th>
+    </tr>
+    <tr>
+        <td scope="row">Navet</td>
+        <td><a href="Vedtekter%20Navet%20V2018.pdf">Vedtekter</a></td>
+        <td><a href="Referat%20%2B%20signaturer.pdf">ord</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">CYB</td>
+        <td><a href="cyb_vedtekter.pdf">Vedtekter</a></td>
+        <td><a href="protokoll_H17.pdf">ord</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Dagen</td>
+        <td><a href="vedtektsforslag.pdf">Vedtekter</a></td>
+        <td><a href="Referat%20Genfors%202017.pdf">ord</a></td>
+        <td><a href="protokoll-v18.pdf">eks</a></td>
+    </tr>
+    <tr>
+        <td scope="row">Fadderstyret</td>
+        <td><a href="Vedtekterfadderstyret.pdf">Vedtekter</a></td>
+        <td><a href="Referat-Generalforsamling-26.10.pdf">ord</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Homebrew</td>
+        <td><a href="Vedtekter%20-%20Homebrew_med%20endringer.pdf">Vedtekter</a></td>
+        <td><a href="20170913162913%20(1).pdf">eks</a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">ProgSys</td>
+        <td><a href="ProgSys_Vedteker%202018.pdf">Vedtekter</a></td>
+        <td></td>
+        <td><a href="ProgSys_GenforsUsignert.pdf">ord</a></td>
+    </tr>
+    <tr>
+        <td scope="row">Mikro</td>
+        <td><a href="gjeldende_vedtekter.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">FUI</td>
+        <td><a href="Statutter _ Fagutvalget ved Institutt for informatikk.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">FU</td>
+        <td><a href="2016-09-02_Fordelingsutvalgets_vedtekter.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">List</td>
+        <td><a href="Vedtekter%20-%20PI_SK.pdf">Vedtekter [uten navnebytte]</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Digitus</td>
+        <td><a href="Vedtekter-for-Digitus.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">IFI-Spillutvikling</td>
+        <td><a href="IFISpillutvikling_Vedtekter2018.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">DEFI</td>
+        <td><a href="Vedtekter%20•%20Defi.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">IFI sjakk</td>
+        <td><a href="Søknad_8_IfiSjakk_vedtekter.pdf">Vedtekter [2015]</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">DUKK</td>
+        <td><a href="vedtekter-uio-kasteklubb.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Applitude</td>
+        <td><a href="Vedtekter.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">IFI-avis</td>
+        <td><a href="Vedtekter%20for%20IFI-avis.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">IFI makers</td>
+        <td>Lagt ned?</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">MAPS</td>
+        <td><a href="vedtekter.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Svett</td>
+        <td>Lagt ned?</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">Verdande</td>
+        <td><a href="Vedtekter%20–%20Verdande.pdf">Vedtekter</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td scope="row">FIFI</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
-    <a href="kart">Kart</a>
-    <a href="seddel">Generere stemmeseddeler</a>
-  </body>
+</body>
 </html>

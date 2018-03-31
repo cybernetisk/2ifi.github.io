@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>IFI Foreninger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <style>
+        .text-primary, td > a {
+            color: #3f51b5 !important;
+        }
+
+        .nav-link {
+            color: #cdbfe3 !important;
+            font-weight: 400 !important;
+        }
+
+        .active, .nav-link:hover {
+            color: #fff !important;
+        }
+
+        .active {
+            font-weight: 500 !important;
+        }
+
+        .table, form {
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .color-fix {
+            background-color: #3f51b5!important;
+        }
+
+        .nav {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
 <body>
-
-<form action="https://stemmeseddel-196621.appspot.com/">
-  Antall stemmeberettigede:<br>
-  <input type="number" name="votes" value="30">
-  <br>
-  Antall stemmeseddeler:<br>
-  <input type="number" name="ballots" value="8">
-  <br>
-  År:<br>
-  <input type="text" name="year" value="V2018">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-
+<div class="color-fix">
+    <ul class="nav nav-tabs color-fix">
+        <li class="nav-item">
+            <a class="nav-link active" href="kart">Liste</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="kart">Kart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="seddel">Generere stemmeseddeler</a>
+        </li>
+    </ul>
+</div>
+<form class="form-group" action="https://stemmeseddel-196621.appspot.com/">
+    Antall stemmeberettigede:<br>
+    <input class="form-control" type="number" name="votes" value="30">
+    <br>
+    Antall stemmeseddeler:<br>
+    <input class="form-control" type="number" name="ballots" value="8">
+    <br>
+    År:<br>
+    <input class="form-control" type="text" name="year" value="V2018">
+    <br><br>
+    <input class="btn btn-primary btn-raised color-fix" type="submit" value="Submit">
+</form>
 </body>
 </html>
