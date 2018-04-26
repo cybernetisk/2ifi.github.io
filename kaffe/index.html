@@ -1,0 +1,31 @@
+<input id="code"></input>
+<button onclick="check()">Check</button>
+<p id="res">Resultat kommer her</p>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCdU2UTfbmjG70pSjESUiI1lKdW9p2EFxM",
+    authDomain: "navet-test.firebaseapp.com",
+    databaseURL: "https://navet-test.firebaseio.com",
+    projectId: "navet-test",
+    storageBucket: "navet-test.appspot.com",
+    messagingSenderId: "466221045282"
+  };
+  firebase.initializeApp(config);
+var db = firebase.firestore();
+function check() {
+var docRef = db.collection("code").doc(document.getElementById("code").value);
+document.getElementById('res').innerHTML = "Jobber";
+docRef.get().then(function(doc) {
+	if (doc.exists) {
+	docRef.delete().then(function() {
+	    document.getElementById('res').innerHTML = "Godkjent";
+	});
+} else {
+	document.getElementById('res').innerHTML = "Ugyldig";
+}
+});
+}
+</script>
