@@ -11,6 +11,7 @@ body {
 }
 
 .grid-parent {
+  max-width: 1750px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
