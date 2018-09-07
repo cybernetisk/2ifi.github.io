@@ -1,0 +1,245 @@
+<html>
+<head>
+<meta charset="UTF-8"> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.20/fabric.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    body {
+      color: #d3d3d3;
+      font: 12pt arial;
+      background-color: #22222;
+      margin: 0;
+      padding: 0;
+    }
+
+    #mynetwork {
+      width: 100vw;
+      height: 100vh;
+      background-color: #222222;
+    }
+
+    img {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      height: 50px;
+      z-index: 100;
+    }
+
+  </style>
+</head>
+<body>
+<div id="mynetwork"></div>
+<script type="text/javascript">
+  // create an array with nodes
+  var size = 17;
+  var fontSize = 13;
+
+  var nodesArray = [
+    {id: 'p1', label: 'Aleksander Bodolai', group: 0},
+    {id: 'p2', label: 'Alexander Ikonomeas', group: 0},
+    {id: 'p3', label: 'Amalie Gundersen', group: 0},
+    {id: 'p4', label: 'Audun Torgersen', group: 0},
+    {id: 'p5', label: 'Bent Kristen Hårstad', group: 0},
+    {id: 'p6', label: 'Christer Karlsen', group: 0},
+    {id: 'p7', label: 'Claudia Carolina Bajek', group: 0},
+    {id: 'p8', label: 'Edna Luneng', group: 0},
+    {id: 'p9', label: 'Elin Sønvisen Johansen', group: 0},
+    {id: 'p10', label: 'Emilie Fjerdingstad', group: 0},
+    {id: 'p11', label: 'Eva rettfrem megsjæl', group: 0},
+    {id: 'p12', label: 'Grunde Dekko Næss', group: 0},
+    {id: 'p13', label: 'Hans Altmann', group: 0},
+    {id: 'p14', label: 'Harald Tveito', group: 0},
+    {id: 'p15', label: 'Hedda Askheim', group: 0},
+    {id: 'p16', label: 'Hege øverkil', group: 0},
+    {id: 'p17', label: 'Helene Frestvedt', group: 0},
+    {id: 'p18', label: 'Henrik Hung Haram', group: 0},
+    {id: 'p19', label: 'Ida Karoline Kristiansen', group: 0},
+    {id: 'p20', label: 'Ingvild Marie Fredwall', group: 0},
+    {id: 'p21', label: 'Jeanett Thomassen', group: 0},
+    {id: 'p22', label: 'Jenny Birkeland Nordland', group: 0},
+    {id: 'p23', label: 'Johannes Fatland Skjeie', group: 0},
+    {id: 'p24', label: 'Karethe Hustad Hansen', group: 0},
+    {id: 'p25', label: 'Katarina Giskegjerde Rød', group: 0},
+    {id: 'p27', label: 'LarsMartin Hammer', group: 0},
+    {id: 'p28', label: 'Lina Filippa Mallaug', group: 0},
+    {id: 'p29', label: 'Linn Myrtveit Stensrud', group: 0},
+    {id: 'p30', label: 'Live G. Lystad', group: 0},
+    {id: 'p31', label: 'Lucja Maksim', group: 0},
+    {id: 'p32', label: 'Magnus Gabriel Aase', group: 0},
+    {id: 'p33', label: 'Maia Daasvand', group: 0},
+    {id: 'p34', label: 'Malene Brattvåg Bø', group: 0},
+    {id: 'p35', label: 'Mari Eidsvåg', group: 0},
+    {id: 'p36', label: 'Marianne Leversund', group: 0},
+    {id: 'p37', label: 'Marie Skyberg Borgen', group: 0},
+    {id: 'p38', label: 'Nicolai Georg Hanken Hobbesland', group: 0},
+    {id: 'p39', label: 'Olav Eliasson Stubbhaug', group: 0},
+    {id: 'p40', label: 'Ole Bendik Rørstad', group: 0},
+    {id: 'p41', label: 'Ole Tobias Bjellaanes Reistad', group: 0},
+    {id: 'p42', label: 'Paula Aarseth Tunstad', group: 0},
+    {id: 'p43', label: 'Per Flatebø', group: 0},
+    {id: 'p44', label: 'Rakel Bjørgstad Haug', group: 0},
+    {id: 'p45', label: 'Randi Elisabeth Knutsdotter Svendsen', group: 0},
+    {id: 'p46', label: 'Richard Markussen Rekdal', group: 0},
+    {id: 'p47', label: 'Rikke Meyer', group: 0},
+    {id: 'p48', label: 'Sandra Gieniusz', group: 0},
+    {id: 'p49', label: 'Sigrid Heggenes Anuglen', group: 0},
+    {id: 'p50', label: 'Sofie Egedius Helle', group: 0},
+    {id: 'p51', label: 'Stefan Hort', group: 0},
+    {id: 'p52', label: 'Synnøve Saenger', group: 0},
+    {id: 'p53', label: 'Tarjei Neset', group: 0},
+    {id: 'p54', label: 'Tharani thavapalan ', group: 0},
+    {id: 'p55', label: 'Vilde Dyvik Vasseljen', group: 0},
+    {id: 'p56', label: 'Vilde Lindholm Hogseth', group: 0},
+    {id: 'p57', label: 'Vilde Marlene Monclair', group: 0},
+    {id: 'p58', label: 'Zakia Ali Zade ', group: 0},
+    {id: 'p59', label: 'Åste Strand Jørgensen', group: 0},
+
+
+    {id: 'f1', label: 'Insomnia', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/Q3qYb5c.jpg", font: {size: fontSize*2}},
+    {id: 'f2', label: 'Placebo', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/SkDPv6E.jpg", font: {size: fontSize*2}},
+    {id: 'f3', label: 'Metaforeningen', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/l2vGBvu.png", font: {size: fontSize*2}},
+    {id: 'f4', label: 'Speilvendt', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/b5ZB3Bq.png", font: {size: fontSize*2}},
+    {id: 'f5', label: 'Startskuddet', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/Jeifbks.jpg", font: {size: fontSize*2}},
+    {id: 'f6', label: 'Kling Kokos', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/EUYC88r.jpg", font: {size: fontSize*2}},
+    {id: 'f7', label: 'PsykoAktiv', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/blYJL4O.png", font: {size: fontSize*2}},
+    {id: 'f8', label: 'Morrari', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/C6UprJg.jpg", font: {size: fontSize*2}},
+    {id: 'f9', label: 'PsychAid', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/tRHPDPf.png", font: {size: fontSize*2}},
+    {id: 'f10', label: 'FOP', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/WWg3uQH.png", font: {size: fontSize*2}},
+    {id: 'f11', label: 'Trip', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/r6shXxk.jpg", font: {size: fontSize*2}},
+    {id: 'f12', label: 'PUG', group: 1, size: size*2.5, shape: 'circularImage', image: "https://i.imgur.com/nnzYYpG.jpg", font: {size: fontSize*2}},
+  ];
+
+  var edgesArray = [
+   {from: 'p1', to: 'f11', color: {color: "red"}},
+   {from: 'p2', to: 'f11', color: {color: "red"}},
+   {from: 'p2', to: 'f2', color: {color: "red"}},
+   {from: 'p3', to: 'f10', color: {color: "red"}},
+   {from: 'p4', to: 'f2', color: {color: "red"}},
+   {from: 'p4', to: 'f3', color: {color: "red"}},
+   {from: 'p5', to: 'f3', color: {color: "red"}},
+   {from: 'p5', to: 'f6', color: {color: "red"}},
+   {from: 'p6', to: 'f10', color: {color: "red"}},
+   {from: 'p7', to: 'f11', color: {color: "red"}},
+   {from: 'p8', to: 'f9', color: {color: "red"}},
+   {from: 'p9', to: 'f5', color: {color: "red"}},
+   {from: 'p10', to: 'f11', color: {color: "red"}},
+   {from: 'p11', to: 'f1', color: {color: "red"}},
+   {from: 'p11', to: 'f2', color: {color: "red"}},
+   {from: 'p12', to: 'f1', color: {color: "red"}},
+   {from: 'p12', to: 'f2', color: {color: "red"}},
+   {from: 'p13', to: 'f4', color: {color: "red"}},
+   {from: 'p14', to: 'f1', color: {color: "red"}},
+   {from: 'p15', to: 'f5', color: {color: "red"}},
+   {from: 'p16', to: 'f10', color: {color: "red"}},
+   {from: 'p17', to: 'f4', color: {color: "red"}},
+   {from: 'p18', to: 'f11', color: {color: "red"}},
+   {from: 'p18', to: 'f2', color: {color: "red"}},
+   {from: 'p19', to: 'f6', color: {color: "red"}},
+   {from: 'p20', to: 'f8', color: {color: "red"}},
+   {from: 'p21', to: 'f6', color: {color: "red"}},
+   {from: 'p22', to: 'f12', color: {color: "red"}},
+   {from: 'p23', to: 'f3', color: {color: "red"}},
+   {from: 'p24', to: 'f5', color: {color: "red"}},
+   {from: 'p25', to: 'f2', color: {color: "red"}},
+   {from: 'p26', to: 'f4', color: {color: "red"}},
+   {from: 'p27', to: 'f4', color: {color: "red"}},
+   {from: 'p28', to: 'f12', color: {color: "red"}},
+   {from: 'p29', to: 'f7', color: {color: "red"}},
+   {from: 'p30', to: 'f9', color: {color: "red"}},
+   {from: 'p31', to: 'f11', color: {color: "red"}},
+   {from: 'p31', to: 'f3', color: {color: "red"}},
+   {from: 'p31', to: 'f5', color: {color: "red"}},
+   {from: 'p32', to: 'f6', color: {color: "red"}},
+   {from: 'p33', to: 'f8', color: {color: "red"}},
+   {from: 'p34', to: 'f4', color: {color: "red"}},
+   {from: 'p35', to: 'f10', color: {color: "red"}},
+   {from: 'p36', to: 'f5', color: {color: "red"}},
+   {from: 'p37', to: 'f4', color: {color: "red"}},
+   {from: 'p38', to: 'f9', color: {color: "red"}},
+   {from: 'p39', to: 'f1', color: {color: "red"}},
+   {from: 'p39', to: 'f3', color: {color: "red"}},
+   {from: 'p40', to: 'f5', color: {color: "red"}},
+   {from: 'p41', to: 'f11', color: {color: "red"}},
+   {from: 'p42', to: 'f9', color: {color: "red"}},
+   {from: 'p43', to: 'f4', color: {color: "red"}},
+   {from: 'p44', to: 'f2', color: {color: "red"}},
+   {from: 'p44', to: 'f6', color: {color: "red"}},
+   {from: 'p45', to: 'f8', color: {color: "red"}},
+   {from: 'p46', to: 'f2', color: {color: "red"}},
+   {from: 'p47', to: 'f10', color: {color: "red"}},
+   {from: 'p48', to: 'f1', color: {color: "red"}},
+   {from: 'p49', to: 'f5', color: {color: "red"}},
+   {from: 'p50', to: 'f12', color: {color: "red"}},
+   {from: 'p51', to: 'f4', color: {color: "red"}},
+   {from: 'p52', to: 'f10', color: {color: "red"}},
+   {from: 'p53', to: 'f12', color: {color: "red"}},
+   {from: 'p54', to: 'f10', color: {color: "red"}},
+   {from: 'p55', to: 'f6', color: {color: "red"}},
+   {from: 'p56', to: 'f6', color: {color: "red"}},
+   {from: 'p57', to: 'f2', color: {color: "red"}},
+   {from: 'p58', to: 'f12', color: {color: "red"}},
+   {from: 'p59', to: 'f5', color: {color: "red"}},
+
+  ];
+
+
+
+  count = [];
+  for(var i = 0; i < edgesArray.length; i++) {
+    if(!count[edgesArray[i].from]) {
+      count[edgesArray[i].from] = 0;
+    }
+    count[edgesArray[i].from]++;
+  }
+
+  for(i = 0; i < nodesArray.length; i++) {
+    if(nodesArray[i].id.indexOf('p') > -1 && count[nodesArray[i].id] !== 0) {
+      nodesArray[i].size = 15*(((count[nodesArray[i].id]-1) * 0.5) + 1);
+      nodesArray[i].font = {
+        size: 13*(((count[nodesArray[i].id]-1) * 0.25) + 1)
+      }
+    }
+  }
+
+  var nodes = new vis.DataSet(nodesArray);
+
+  // create an array with edges
+  var edges = new vis.DataSet(edgesArray);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+
+  // provide the data in the vis format
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    nodes: {
+      shape: 'dot',
+      size: 15,
+      font: {
+        size: 13,
+        color: '#ffffff'
+      },
+      borderWidth: 2
+    },
+    edges: {
+      width: 2
+    }
+  };
+
+  // initialize your network!
+  var network = new vis.Network(container, data, options);
+
+network.on("doubleClick", function (params) {
+        params.event = "[original event]";
+        console.log(JSON.stringify(params, null, 4));
+    });
+
+</script>
+</body>
+</html>
+
